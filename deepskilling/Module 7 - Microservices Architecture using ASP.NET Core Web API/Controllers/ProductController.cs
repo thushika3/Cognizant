@@ -1,11 +1,25 @@
-[Authorize]
-[HttpGet]
-public IActionResult GetProducts()
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace JwtDemo.Controllers
 {
-    return Ok(new List<string>
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ProductController : ControllerBase
     {
-        "Laptop",
-        "Mouse",
-        "Keyboard"
-    });
+        [Authorize]
+        [HttpGet]
+        public IActionResult GetProducts()
+        {
+            List<string> products = new List<string>
+            {
+                "Laptop",
+                "Mouse",
+                "Keyboard",
+                "Monitor"
+            };
+
+            return Ok(products);
+        }
+    }
 }
