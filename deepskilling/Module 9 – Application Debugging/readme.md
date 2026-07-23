@@ -56,4 +56,4 @@ src/
 
 ## Author
 
-Your Name
+K. Thushika
