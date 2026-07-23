@@ -1,0 +1,15 @@
+<input #name>
+
+<button (click)="addStudent(name.value)">
+Add Student
+</button>
+
+<ul>
+
+<li *ngFor="let student of service.students">
+
+{{student}}
+
+</li>
+
+</ul>
